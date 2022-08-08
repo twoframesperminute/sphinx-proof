@@ -72,6 +72,9 @@ class ElementDirective(SphinxDirective):
         section = nodes.section(classes=[f"{typ}-content"], ids=["proof-content"])
         self.state.nested_parse(self.content, self.content_offset, section)
 
+        if typ == "answer":
+            self.options["nonumber"] = True
+
         if "nonumber" in self.options:
             node = unenumerable_node()
         else:
