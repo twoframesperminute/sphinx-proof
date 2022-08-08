@@ -94,6 +94,17 @@ class AssumptionDirective(ElementDirective):
 
     name = "assumption"
 
+class AssignmentDirective(ElementDirective):
+    """A custom assignment directive."""
+
+    name = "assignment"
+
+class AnswerDirective(ElementDirective):
+    """A custom answer directive."""
+
+    name = "answer"
+    options = {"nonumber": True}
+
 
 PROOF_TYPES = {
     "axiom": AxiomDirective,
@@ -110,4 +121,6 @@ PROOF_TYPES = {
     "observation": ObservationDirective,
     "proposition": PropositionDirective,
     "assumption": AssumptionDirective,
+    "assignment": AssignmentDirective,
+    "answer": AnswerDirective
 }
